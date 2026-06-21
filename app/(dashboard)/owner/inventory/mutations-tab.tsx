@@ -31,7 +31,9 @@ import {
 } from "@/components/ui/dialog"
 import type { Tables } from "@/lib/types/database"
 
-type StockMutation = Tables<"stock_mutations">
+type StockMutation = Tables<"stock_mutations"> & {
+  products?: { name: string } | null
+}
 
 interface InventoryMutationsTabProps {
   initialData: StockMutation[]
